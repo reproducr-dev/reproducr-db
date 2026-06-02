@@ -1,11 +1,11 @@
 # reproducr-db
 
 Community-maintained database of known silent breaking changes in R packages,
-used by [`reproducr`](https://github.com/ndohpenngit/reproducr) to power
+used by [`reproducr`](https://github.com/reproducr-dev/reproducr) to power
 `risk_score()`.
 
 <!-- badges: start -->
-[![Validate entries](https://github.com/ndohpenngit/reproducr-db/actions/workflows/validate.yml/badge.svg)](https://github.com/ndohpenngit/reproducr-db/actions/workflows/validate.yml)
+[![Validate entries](https://github.com/reproducr-dev/reproducr-db/actions/workflows/validate.yml/badge.svg)](https://github.com/reproducr-dev/reproducr-db/actions/workflows/validate.yml)
 <!-- badges: end -->
 
 ---
@@ -34,7 +34,7 @@ Each entry is a JSON file in `entries/{pkg}/`:
   "risk":         "high",
   "description":  "In dplyr 1.1.0, summarise() changed its default grouping behaviour ...",
   "reference":    "https://dplyr.tidyverse.org/news/index.html#dplyr-110",
-  "added_by":     "ndohpenngit",
+  "added_by":     "reproducr-dev",
   "added_date":   "2026-06-01"
 }
 ```

@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In lubridate 1.9.0, period() and duration arithmetic revised timezone and DST handling. Date calculations that span daylight-saving boundaries may return different results.",
   "reference": "https://lubridate.tidyverse.org/news/index.html",
-  "added_by": "ndohpenngit",
+  "added_by": "reproducr-dev",
   "added_date": "2026-06-01"
 }

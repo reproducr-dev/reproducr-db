@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In purrr 1.0.0, map_df() was soft-deprecated in favour of map() |> list_rbind(). Behaviour may differ for edge cases involving NULL elements or varying column structures.",
   "reference": "https://purrr.tidyverse.org/news/index.html",
-  "added_by": "ndohpenngit",
+  "added_by": "reproducr-dev",
   "added_date": "2026-06-01"
 }

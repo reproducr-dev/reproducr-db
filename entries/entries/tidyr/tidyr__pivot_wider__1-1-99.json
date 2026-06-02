@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In tidyr 1.2.0, pivot_wider() changed its handling of duplicate identifier rows: it now errors by default (values_fn = NULL) instead of silently selecting the last value. Analyses with duplicated keys will now fail rather than producing quietly incorrect wide tables.",
   "reference": "https://tidyr.tidyverse.org/news/index.html",
-  "added_by": "ndohpenngit",
+  "added_by": "reproducr-dev",
   "added_date": "2026-06-01"
 }
