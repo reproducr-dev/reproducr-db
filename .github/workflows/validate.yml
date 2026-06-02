@@ -1,0 +1,137 @@
+name: Validate entries
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'entries/**'
+  push:
+    branches: [main]
+    paths:
+      - 'entries/**'
+      - 'schema.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jsonschema validator
+        run: pip install jsonschema
+
+      - name: Validate all entries against schema
+        run: |
+          python3 - << 'EOF'
+          import json
+          import jsonschema
+          import glob
+          import sys
+
+          with open("schema.json") as f:
+              schema = json.load(f)
+
+          files   = glob.glob("entries/**/*.json", recursive=True)
+          errors  = []
+          checked = 0
+
+          for fpath in sorted(files):
+              try:
+                  with open(fpath) as f:
+                      entry = json.load(f)
+                  jsonschema.validate(instance=entry, schema=schema)
+                  checked += 1
+              except json.JSONDecodeError as e:
+                  errors.append(f"{fpath}: Invalid JSON — {e}")
+              except jsonschema.ValidationError as e:
+                  errors.append(f"{fpath}: Schema violation — {e.message}")
+
+          print(f"Validated {checked} entries.")
+
+          if errors:
+              print(f"\n{len(errors)} error(s) found:\n")
+              for err in errors:
+                  print(f"  FAIL: {err}")
+              sys.exit(1)
+          else:
+              print("All entries are valid.")
+          EOF
+
+      - name: Check filename convention
+        run: |
+          python3 - << 'EOF'
+          import glob
+          import re
+          import sys
+
+          files  = glob.glob("entries/**/*.json", recursive=True)
+          errors = []
+
+          # Expected: entries/{pkg}/{pkg}__{fn}__{from_version}.json
+          pattern = re.compile(
+              r"entries/([^/]+)/([^/]+)__([^/]+)__([^/]+)\.json$"
+          )
+
+          for fpath in files:
+              m = pattern.search(fpath)
+              if not m:
+                  errors.append(f"{fpath}: Filename does not match convention "
+                                 f"entries/{{pkg}}/{{pkg}}__{{fn}}__{{from_version}}.json")
+                  continue
+
+              dir_pkg, file_pkg = m.group(1), m.group(2)
+              if dir_pkg != file_pkg:
+                  errors.append(f"{fpath}: Directory pkg '{dir_pkg}' does not "
+                                 f"match filename pkg '{file_pkg}'")
+
+          if errors:
+              print(f"\n{len(errors)} filename error(s):\n")
+              for err in errors:
+                  print(f"  FAIL: {err}")
+              sys.exit(1)
+          else:
+              print(f"All {len(files)} filenames follow the convention.")
+          EOF
+
+      - name: Check version window sanity
+        run: |
+          python3 - << 'EOF'
+          import json
+          import glob
+          import sys
+          from packaging.version import Version
+
+          # Install packaging if needed
+          try:
+              from packaging.version import Version
+          except ImportError:
+              import subprocess
+              subprocess.run(["pip", "install", "packaging"], check=True)
+              from packaging.version import Version
+
+          files  = glob.glob("entries/**/*.json", recursive=True)
+          errors = []
+
+          for fpath in sorted(files):
+              try:
+                  with open(fpath) as f:
+                      entry = json.load(f)
+                  fv = Version(entry["from_version"])
+                  tv = Version(entry["to_version"])
+                  if fv >= tv:
+                      errors.append(
+                          f"{fpath}: from_version ({entry['from_version']}) "
+                          f">= to_version ({entry['to_version']})"
+                      )
+              except Exception as e:
+                  errors.append(f"{fpath}: Version check failed — {e}")
+
+          if errors:
+              print(f"\n{len(errors)} version window error(s):\n")
+              for err in errors:
+                  print(f"  FAIL: {err}")
+              sys.exit(1)
+          else:
+              print(f"All version windows are valid (from < to).")
+          EOF

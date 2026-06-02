@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "reproducr breaking-changes database entry",
+  "description": "Schema for a single breaking-change entry in the reproducr database",
+  "type": "object",
+  "required": [
+    "pkg",
+    "fn",
+    "from_version",
+    "to_version",
+    "risk",
+    "description",
+    "reference"
+  ],
+  "properties": {
+    "pkg": {
+      "type": "string",
+      "description": "Package name (e.g. 'dplyr', 'base')",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$"
+    },
+    "fn": {
+      "type": "string",
+      "description": "Function name (e.g. 'summarise', 'sample')",
+      "pattern": "^[a-zA-Z.][a-zA-Z0-9._]*$"
+    },
+    "from_version": {
+      "type": "string",
+      "description": "Last safe version (exclusive lower bound). Set to one patch below the first risky version.",
+      "examples": ["1.0.99", "3.5.99"]
+    },
+    "to_version": {
+      "type": "string",
+      "description": "Last risky version (inclusive upper bound). See version window design principles.",
+      "examples": ["1.1.9", "3.6.9"]
+    },
+    "risk": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "high = output values change silently; medium = may error or change output; low = minor behavioural note"
+    },
+    "description": {
+      "type": "string",
+      "description": "Plain-English explanation of the breaking change and its reproducibility impact. Should state which version introduced the change, what the old behaviour was, what the new behaviour is, and the practical consequence.",
+      "minLength": 50
+    },
+    "reference": {
+      "type": "string",
+      "description": "URL to the official changelog, NEWS.md, or documentation entry",
+      "format": "uri"
+    },
+    "added_by": {
+      "type": "string",
+      "description": "GitHub username of the contributor (optional)"
+    },
+    "added_date": {
+      "type": "string",
+      "description": "Date added in YYYY-MM-DD format (optional)",
+      "format": "date"
+    }
+  },
+  "additionalProperties": false
+}

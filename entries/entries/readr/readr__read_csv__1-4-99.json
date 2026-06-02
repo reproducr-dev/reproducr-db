@@ -1,0 +1,11 @@
+{
+  "pkg": "readr",
+  "fn": "read_csv",
+  "from_version": "1.4.99",
+  "to_version": "2.1.9",
+  "risk": "high",
+  "description": "In readr 2.0.0, read_csv() switched from a custom parser to the vroom backend. Column type guessing improved but changed: previously numeric columns may now parse as character (or vice versa) depending on the data. Always specify col_types explicitly for reproducible ingestion.",
+  "reference": "https://readr.tidyverse.org/news/index.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-01"
+}

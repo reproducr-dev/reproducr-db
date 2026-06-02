@@ -1,0 +1,11 @@
+{
+  "pkg": "data.table",
+  "fn": "melt",
+  "from_version": "1.13.99",
+  "to_version": "1.15.9",
+  "risk": "low",
+  "description": "In data.table 1.14.0, melt() changed the default class of the 'variable' column from factor to character. Code that uses factor levels from the variable column will silently fail or produce different orderings.",
+  "reference": "https://github.com/Rdatatable/data.table/blob/master/NEWS.md",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-01"
+}

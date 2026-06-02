@@ -1,0 +1,11 @@
+{
+  "pkg": "dplyr",
+  "fn": "summarise",
+  "from_version": "1.0.99",
+  "to_version": "1.1.9",
+  "risk": "high",
+  "description": "In dplyr 1.1.0, summarise() changed its default grouping behaviour: it now drops the last grouping level and returns an ungrouped data frame by default (.groups = 'drop_last'). Code that relied on the result being grouped (e.g. chaining further group operations without re-grouping) will produce silently different results.",
+  "reference": "https://dplyr.tidyverse.org/news/index.html#dplyr-110",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-01"
+}
