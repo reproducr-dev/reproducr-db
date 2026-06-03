@@ -1,0 +1,19 @@
+name: Notify reproducr of database update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'entries/**'
+      - 'schema.json'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger reproducr sync
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CROSS_REPO_PAT }}
+          repository: reproducr-dev/reproducr
+          event-type: db-updated
