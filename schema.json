@@ -56,6 +56,14 @@
       "type": "string",
       "description": "Date added in YYYY-MM-DD format (optional)",
       "format": "date"
+    },
+    "closed": {
+      "type": "boolean",
+      "description": "If true, the version window is intentionally closed — the ecosystem has moved on and the staleness checker should skip this entry. Use when to_version is deliberately set low (e.g. historical base R changes)."
+    },
+    "closed_reason": {
+      "type": "string",
+      "description": "Human-readable explanation of why the window was deliberately closed (optional, used with closed: true)."
     }
   },
   "additionalProperties": false

@@ -7,5 +7,7 @@
   "description": "In R 4.0.0, hclust() changed its tie-breaking rule for equal distances. Dendrograms for datasets with tied distance values will differ between R 3.x and R 4.x.",
   "reference": "https://cran.r-project.org/doc/manuals/r-release/NEWS.html",
   "added_by": "ndohpenngit",
-  "added_date": "2026-06-01"
+  "added_date": "2026-06-01",
+  "closed": true,
+  "closed_reason": "Window deliberately closed at R 4.0.9. The R 4.0.0 hclust tie-breaking change is historical <e2><80><94> all active R users are on R >= 4.x and on the same side of the change. Extending the window would produce false positives."
 }

@@ -7,5 +7,7 @@
   "description": "In R 3.6.0, RNG defaults changed. Stochastic output from rnorm() with the same seed will differ between R <= 3.5 and R >= 3.6.",
   "reference": "https://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.3.html",
   "added_by": "ndohpenngit",
-  "added_date": "2026-06-01"
+  "added_date": "2026-06-01",
+  "closed": true,
+  "closed_reason": "Window deliberately closed at R 3.6.9. The R 3.6.0 RNG change is a historical event <e2><80><94> all active R users (R >= 4.x) are on the same side of the change. Flagging modern R versions produces false positives. The risk only applies to teams actively comparing output between R <= 3.5 and R >= 3.6."
 }
