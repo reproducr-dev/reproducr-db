@@ -1,0 +1,11 @@
+{
+  "pkg": "stats",
+  "fn": "runif",
+  "from_version": "3.5.99",
+  "to_version": "3.6.9",
+  "risk": "high",
+  "description": "In R 3.6.0, RNG defaults changed. Stochastic output from runif() with the same seed will differ between R <= 3.5 and R >= 3.6. Use set.seed() with explicit kind argument for stable results.",
+  "reference": "https://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.3.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-01"
+}

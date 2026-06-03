@@ -1,0 +1,11 @@
+{
+  "pkg": "caret",
+  "fn": "train",
+  "from_version": "6.0.99",
+  "to_version": "7.0.9",
+  "risk": "medium",
+  "description": "In caret 7.0.0, the train() function underwent significant interface changes including updated default resampling methods and model tuning behaviour. Results from caret 6.x models may not replicate exactly under caret 7.x without pinning the version and resampling seed.",
+  "reference": "https://cran.r-project.org/web/packages/caret/news/news.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-03"
+}

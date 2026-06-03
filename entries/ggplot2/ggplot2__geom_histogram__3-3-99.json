@@ -1,0 +1,11 @@
+{
+  "pkg": "ggplot2",
+  "fn": "geom_histogram",
+  "from_version": "3.3.99",
+  "to_version": "4.0.9",
+  "risk": "low",
+  "description": "In ggplot2 3.4.0, geom_histogram() improved its default binwidth selection algorithm. Visual output (bin boundaries, counts per bin) may differ slightly from earlier versions when binwidth is not specified.",
+  "reference": "https://ggplot2.tidyverse.org/news/index.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-01"
+}
