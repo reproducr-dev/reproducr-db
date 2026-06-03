@@ -15,7 +15,7 @@
   "properties": {
     "pkg": {
       "type": "string",
-      "description": "Package name (e.g. 'dplyr', 'base')",
+      "description": "Package namÒe (e.g. 'dplyr', 'base')",
       "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$"
     },
     "fn": {
