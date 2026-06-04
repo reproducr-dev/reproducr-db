@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In purrr 1.0.0, map() changed error handling: it now errors on missing elements and .default was removed. Code relying on silent NULL returns for missing elements will now fail or produce different results.",
   "reference": "https://purrr.tidyverse.org/news/index.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

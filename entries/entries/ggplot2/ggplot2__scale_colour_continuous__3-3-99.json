@@ -6,6 +6,6 @@
   "risk": "low",
   "description": "In ggplot2 3.4.0, the default continuous colour scale changed from a blue gradient to a viridis-based scale. Saved plots and reports generated after upgrading will use different colours.",
   "reference": "https://ggplot2.tidyverse.org/news/index.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

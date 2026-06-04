@@ -6,6 +6,6 @@
   "risk": "high",
   "description": "In dplyr 1.1.0, summarize() changed its default grouping behaviour: it now drops the last grouping level by default (.groups = 'drop_last'). Code relying on retained grouping structure will produce different results.",
   "reference": "https://dplyr.tidyverse.org/news/index.html#dplyr-110",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

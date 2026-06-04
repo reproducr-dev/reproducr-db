@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In data.table 1.14.0, fread() improved column type detection, which may cause some columns to parse differently. Specify colClasses explicitly to guarantee consistent ingestion across versions.",
   "reference": "https://github.com/Rdatatable/data.table/blob/master/NEWS.md",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

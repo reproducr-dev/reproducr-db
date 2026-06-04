@@ -6,6 +6,6 @@
   "risk": "high",
   "description": "In R 3.6.0, RNG defaults changed. Results from rbinom() with the same seed will differ between R <= 3.5 and R >= 3.6.",
   "reference": "https://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.3.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

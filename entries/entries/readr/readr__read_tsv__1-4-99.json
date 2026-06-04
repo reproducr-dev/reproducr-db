@@ -6,6 +6,6 @@
   "risk": "high",
   "description": "In readr 2.0.0, read_tsv() switched to the vroom backend. Column type guessing changed; results may differ. Specify col_types explicitly.",
   "reference": "https://readr.tidyverse.org/news/index.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

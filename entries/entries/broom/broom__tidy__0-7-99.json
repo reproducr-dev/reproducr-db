@@ -6,6 +6,6 @@
   "risk": "medium",
   "description": "In broom 0.8.0, tidy() renamed columns for several model types (e.g. 'statistic' became 'z' for glm). Code selecting columns by name from tidy() output will silently select wrong columns or error.",
   "reference": "https://broom.tidymodels.org/news/index.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }

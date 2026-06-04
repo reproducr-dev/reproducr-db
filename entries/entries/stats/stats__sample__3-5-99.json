@@ -6,6 +6,6 @@
   "risk": "high",
   "description": "In R 3.6.0, the default RNG algorithm for sample() changed (sample.kind = 'Rejection' replaced 'Rounding'). Results produced with the same seed in R <= 3.5 will differ in R >= 3.6. Use set.seed(seed, kind = 'Mersenne-Twister', sample.kind = 'Rejection') for explicit reproducibility.",
   "reference": "https://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.3.html",
-  "added_by": "reproducr-dev",
+  "added_by": "repro-stats",
   "added_date": "2026-06-01"
 }
