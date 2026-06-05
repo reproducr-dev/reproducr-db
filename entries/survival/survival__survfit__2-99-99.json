@@ -1,0 +1,11 @@
+{
+  "pkg": "survival",
+  "fn": "survfit",
+  "from_version": "2.99.99",
+  "to_version": "3.8.9",
+  "risk": "medium",
+  "description": "In survival 3.0.0, survfit() changed its output object structure. The $surv, $time, and $n.event components now always return matrices for multi-strata fits rather than vectors. Code that accesses survfit() output with numeric indexing (e.g., $surv[1]) will silently return the wrong group's estimate when multiple strata are present.",
+  "reference": "https://cran.r-project.org/web/packages/survival/news/news.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-04"
+}

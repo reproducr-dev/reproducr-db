@@ -1,0 +1,11 @@
+{
+  "pkg": "survival",
+  "fn": "coxph",
+  "from_version": "3.1.99",
+  "to_version": "3.8.9",
+  "risk": "low",
+  "description": "In survival 3.2.0, coxph() updated its default handling of the robust variance estimator for weighted models. Models with non-integer weights (e.g., IPTW or matching weights) may return slightly different standard errors and confidence intervals compared to survival 3.1.x. The change is small but affects exact numerical reproducibility.",
+  "reference": "https://cran.r-project.org/web/packages/survival/news/news.html",
+  "added_by": "ndohpenngit",
+  "added_date": "2026-06-04"
+}
