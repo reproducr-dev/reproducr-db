@@ -1,6 +1,6 @@
 # macOS
 .DS_Store
-.DS_Store?
+*~entries/.DS_Store
 ._*
 .Spotlight-V100
 .Trashes
@@ -20,4 +20,3 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
-*~
