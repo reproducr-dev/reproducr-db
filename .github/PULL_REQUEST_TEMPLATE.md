@@ -1,3 +1,6 @@
+## Related issues
+<!-- Closes #XX -->
+
 ## What does this PR do?
 
 - [ ] New entry: `pkg::fn`
